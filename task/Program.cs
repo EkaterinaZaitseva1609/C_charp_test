@@ -27,10 +27,15 @@ string[] GetWord(string[] array, int n)
     return outputArray;
 }
 
-System.Console.WriteLine("Введит число N");
+System.Console.WriteLine("Введите число N");
 int n = int.Parse(Console.ReadLine());
-string[] array = { "hello", "123", "world", "Denmark", "yes", "min" };
+if (n <= 0)
+{
+    System.Console.WriteLine("введите положительное число");
+    System.Environment.Exit(0);
+}
 
+string[] array = { "hello", "123", "world", "Denmark", "yes", "min" };
 string[] result = GetWord(array, n);
 string output = Print(result);
 System.Console.WriteLine(output);
